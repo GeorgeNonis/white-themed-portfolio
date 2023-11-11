@@ -3,6 +3,7 @@ const Header = () => {
     <header className="z-[999] relative">
       <div
         className="  fixed
+        -translate-x-1/2
     top-0
     left-1/2 
     h-[4.5rem] 

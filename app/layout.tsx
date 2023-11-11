@@ -1,3 +1,4 @@
+import Header from "@/components/headers";
 import "./globals.css";
 import { Inter } from "next/font/google";
 
@@ -48,6 +49,7 @@ export default function RootLayout({
     2xl:left-[-5rem]
     dark:bg-[#676394]"
         />
+        <Header />
         {children}
       </body>
     </html>
