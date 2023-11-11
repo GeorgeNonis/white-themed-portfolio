@@ -1,9 +1,13 @@
+"use client";
+import { motion } from "framer-motion";
+
 const Header = () => {
   return (
     <header className="z-[999] relative">
-      <div
-        className="  fixed
-        -translate-x-1/2
+      <motion.div
+        className="
+    fixed
+    -translate-x-1/2
     top-0
     left-1/2 
     h-[4.5rem] 
@@ -24,6 +28,8 @@ const Header = () => {
     dark:bg-gray-950 
     dark:border-black/40
     dark:bg-opacity-75"
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
       />
     </header>
   );
