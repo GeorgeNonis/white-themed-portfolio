@@ -23,7 +23,7 @@ const Header = () => {
     dark:bg-gray-950 
     dark:border-black/40
     dark:bg-opacity-75"
-      ></div>
+      />
     </header>
   );
 };
