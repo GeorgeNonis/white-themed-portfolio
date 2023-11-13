@@ -1,9 +1,12 @@
-import Header from "@/components/headers";
+import { About, Intro, Projects, SectionDivider } from "@/components";
 
 const Home = () => {
   return (
-    <main>
-      <Header />
+    <main className="flex flex-col items-center px-4">
+      <Intro />
+      <SectionDivider />
+      <About />
+      <Projects />
     </main>
   );
 };
