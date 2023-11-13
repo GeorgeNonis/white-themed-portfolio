@@ -137,4 +137,4 @@ export const projectsData = [
     imageUrl: "project_image",
     sourceCodeUrl: "source_code",
   },
-];
+] as const;
