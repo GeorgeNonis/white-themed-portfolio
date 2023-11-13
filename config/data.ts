@@ -1,6 +1,12 @@
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
+// import notemanager from "/notemanager.png";
+// import carrental from "/carrental.png";
+// import eshop from "/eshop.png";
+// import pwdgenerator from "/pwdgenerator.jpg";
+// import colorpicker from "/colorpicker.png";
+// import movieseeker from "/movieseeker.png";
 
 export const links = [
   {
@@ -94,7 +100,7 @@ export const projectsData = [
     description:
       "Introducing a full-stack TypeScript web app designed for efficient note management. Enjoy a range of features including easy reordering, pinning and unpinning notes, as well as convenient account settings. Experience the seamless usability of our mobile-friendly interface, ensuring smooth note management on the go.",
     tags: ["typescript", "react", "redux", "scss", "nodejs", "expressjs"],
-    imageUrl: "project_image",
+    imageUrl: "/notemanager.png",
     sourceCodeUrl: "source_code",
   },
   {
@@ -102,7 +108,7 @@ export const projectsData = [
     description:
       "Dive into the dynamic world of vehicle rental with our front-end project, Car Rental. This sleek web application is expertly crafted using the robust trio of React, TypeScript, and Tailwind CSS, ensuring a fully responsive and intuitive user experience. Car Rental showcases the prowess of modern web development with seamless navigation, interactive carousels, and a host of responsive features designed to provide users with a smooth and engaging interface on any device. Whether on desktop or mobile, Car Rental stands out with its elegant design and smooth transitions, all while harnessing the power of cutting-edge React packages to elevate the user journey.",
     tags: ["typescript", "react", "tailwind", "twin-macro", "responsive"],
-    imageUrl: "project_image",
+    imageUrl: "/carrental.png",
     sourceCodeUrl: "source_code",
   },
   {
@@ -110,7 +116,7 @@ export const projectsData = [
     description:
       "I created a sleek and minimalist e-shop with user-friendly navigation. To enhance visual appeal, I used Midjourney's AI tools for captivating images. The UI/UX design is my own creation, showcasing intuitive and engaging interfaces. I pushed the boundaries of plain CSS, avoiding CSS libraries for a unique website. It's fully optimized for mobile devices, ensuring a seamless experience across screen sizes.",
     tags: ["typescript", "react", "redux", "scss"],
-    imageUrl: "project_image",
+    imageUrl: "eshop.png",
     sourceCodeUrl: "source_code",
   },
   {
@@ -118,7 +124,7 @@ export const projectsData = [
     description:
       "This project, Unraveling Noni's World, was undertaken to enhance my frontend development skills using Next.js, a popular React framework. The goal was to gain hands-on experience with Next.js and explore its features and capabilities.",
     tags: ["typescript", "next", "react", "redux", "react-stitches"],
-    imageUrl: "project_image",
+    imageUrl: "movieseeker.png",
     sourceCodeUrl: "source_code",
   },
   {
@@ -126,7 +132,7 @@ export const projectsData = [
     description:
       "Color Picker - Nonis is a powerful tool designed specifically for developers and UI/UX designers. It provides an intuitive interface to generate colors, copy them, and seamlessly add them to your palette. With Color Picker - Nonis, you can effortlessly create harmonious color schemes and have them readily available for your design projects. Simplify your color workflow and elevate your design process with Color Picker - Nonis.",
     tags: ["typescript", "react", "git", "html", "css"],
-    imageUrl: "project_image",
+    imageUrl: "colorpicker.png",
     sourceCodeUrl: "source_code",
   },
   {
@@ -134,7 +140,7 @@ export const projectsData = [
     description:
       "Generate strong and secure passwords with Password Generator - Nonis. Customize password length and choose from options like uppercase letters, lowercase letters, numbers, and special characters. Includes a password strength indicator and history section for easy reference. Keep your accounts secure with ease!",
     tags: ["typescript", "react", "git", "html", "css"],
-    imageUrl: "project_image",
+    imageUrl: "pwdgenerator.jpg",
     sourceCodeUrl: "source_code",
   },
 ] as const;
