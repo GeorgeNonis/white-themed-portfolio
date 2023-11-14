@@ -52,8 +52,8 @@ export default function RootLayout({
         />
         <ActiveSectionContenxtProvider>
           <Header />
+          {children}
         </ActiveSectionContenxtProvider>
-        {children}
       </body>
     </html>
   );
