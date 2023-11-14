@@ -1,9 +1,13 @@
 "use client";
 import { links } from "@/config/data";
 import { motion } from "framer-motion";
+import clsx from "clsx";
 import Link from "next/link";
+import { useState } from "react";
 
 const Header = () => {
+  const [activeSection, setActiveSection] = useState("Home");
+  console.log({ activeSection });
   return (
     <header className="z-[999] relative">
       <motion.div
@@ -44,7 +48,16 @@ const Header = () => {
               >
                 <Link
                   href={link.hash}
-                  className="flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition"
+                  className={clsx(
+                    "flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:text-gray-500 dark:hover:text-gray-300",
+                    {
+                      "text-gray-950 dark:text-gray-200":
+                        activeSection === link.name,
+                    }
+                  )}
+                  onClick={() => {
+                    setActiveSection(link.hash);
+                  }}
                 >
                   {link.name}
                 </Link>
