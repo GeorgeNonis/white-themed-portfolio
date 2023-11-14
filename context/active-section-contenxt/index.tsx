@@ -1,6 +1,6 @@
 "use client";
 import { ReactNode, createContext, useState } from "react";
-import { ActiveSectionContextProps } from "./types";
+import type { ActiveSectionContextProps, SectionNameType } from "./types";
 
 const defaultContextValue: ActiveSectionContextProps = {
   activeSection: "Home",
@@ -14,7 +14,7 @@ export const ActiveSectionContenxtProvider = ({
 }: {
   children: ReactNode;
 }) => {
-  const [activeSection, setActiveSection] = useState("Home");
+  const [activeSection, setActiveSection] = useState<SectionNameType>("Home");
 
   return (
     <ActiveSectionContext.Provider value={{ activeSection, setActiveSection }}>
