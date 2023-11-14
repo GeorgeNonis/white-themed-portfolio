@@ -6,7 +6,6 @@ import Link from "next/link";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
-// import CV from "@/config/LinkedinCV.pdf";
 
 const Intro = () => {
   return (

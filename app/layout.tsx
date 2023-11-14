@@ -1,6 +1,7 @@
 import { Header } from "@/components";
 import "./globals.css";
 import { Inter } from "next/font/google";
+import { ActiveSectionContenxtProvider } from "@/context/active-section-contenxt";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -49,7 +50,9 @@ export default function RootLayout({
     2xl:left-[-5rem]
     dark:bg-[#676394]"
         />
-        <Header />
+        <ActiveSectionContenxtProvider>
+          <Header />
+        </ActiveSectionContenxtProvider>
         {children}
       </body>
     </html>
