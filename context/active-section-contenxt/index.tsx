@@ -11,9 +11,17 @@ export const ActiveSectionContenxtProvider = ({
   children: ReactNode;
 }) => {
   const [activeSection, setActiveSection] = useState<SectionNameType>("Home");
+  const [timeOfLastClick, setTimeOfLastClick] = useState(0);
 
   return (
-    <ActiveSectionContext.Provider value={{ activeSection, setActiveSection }}>
+    <ActiveSectionContext.Provider
+      value={{
+        activeSection,
+        setActiveSection,
+        setTimeOfLastClick,
+        timeOfLastClick,
+      }}
+    >
       {children}
     </ActiveSectionContext.Provider>
   );
