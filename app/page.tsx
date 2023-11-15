@@ -7,7 +7,7 @@ const Home = () => {
       <SectionDivider />
       <About />
       <Projects />
-      {/* <Skills /> */}
+      <Skills />
     </main>
   );
 };
