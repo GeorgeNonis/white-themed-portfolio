@@ -2,6 +2,8 @@
 import { useSectionInView } from "@/hooks";
 import SectionHeading from "../section-heading";
 import { skillsData } from "@/config/data";
+import { motion } from "framer-motion";
+import { fadeInAnimationVariants } from "./skills.styles";
 
 const Skills = () => {
   const { ref } = useSectionInView("Skills");
@@ -14,12 +16,19 @@ const Skills = () => {
       <SectionHeading>My Skills I guess</SectionHeading>
       <ul className="flex flex-wrap justify-center gap-2 text-lg text-gray-800">
         {skillsData.map((skill, index) => (
-          <li
+          <motion.li
             key={index}
+            variants={fadeInAnimationVariants}
             className="bg-white borderBlack rounded-xl px-5 py-3 dark:bg-white/10 dark:text-white/80"
+            initial="initial"
+            whileInView="animate"
+            viewport={{
+              once: true,
+            }}
+            custom={index}
           >
             {skill}
-          </li>
+          </motion.li>
         ))}
       </ul>
     </section>
