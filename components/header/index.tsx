@@ -6,7 +6,8 @@ import Link from "next/link";
 import { useActiveSectionContext } from "@/context/active-section-contenxt";
 
 const Header = () => {
-  const { activeSection, setActiveSection } = useActiveSectionContext();
+  const { activeSection, setActiveSection, setTimeOfLastClick } =
+    useActiveSectionContext();
   return (
     <header className="z-[999] relative">
       <motion.div
@@ -40,7 +41,7 @@ const Header = () => {
           {links.map((link, index) => {
             return (
               <motion.li
-                key={index}
+                key={link.hash}
                 className="h-3/4 flex items-center justify-center"
                 initial={{ y: -100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -56,6 +57,7 @@ const Header = () => {
                   )}
                   onClick={() => {
                     setActiveSection(link.name);
+                    setTimeOfLastClick(Date.now());
                   }}
                 >
                   {link.name}
