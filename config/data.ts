@@ -87,3 +87,47 @@ export const skillsData = [
   "Framer Motion",
   "Figma",
 ] as const;
+
+export const projectsData = [
+  {
+    title: "Note Manager",
+    description:
+      "Introducing a full-stack TypeScript web app designed for efficient note management. Enjoy a range of features including easy reordering, pinning and unpinning notes, as well as convenient account settings. Experience the seamless usability of our mobile-friendly interface, ensuring smooth note management on the go.",
+    tags: ["typescript", "react", "redux", "scss", "nodejs", "expressjs"],
+    imageUrl: "/notemanager.png",
+  },
+  {
+    title: "Car Rental",
+    description: `This sleek web application is crafted using the robust trio of React, TypeScript, and Tailwind CSS, ensuring a fully responsive and intuitive user experience.`,
+    tags: ["typescript", "react", "tailwind", "twin-macro", "responsive"],
+    imageUrl: "/carrental.png",
+  },
+  {
+    title: "E-Shop",
+    description:
+      "I created a sleek and minimalist e-shop with user-friendly navigation. To enhance visual appeal, I used Midjourney's AI tools for captivating images. The UI/UX design is my own creation, showcasing intuitive and engaging interfaces. I pushed the boundaries of plain CSS, avoiding CSS libraries for a unique website. It's fully optimized for mobile devices, ensuring a seamless experience across screen sizes.",
+    tags: ["typescript", "react", "redux", "scss"],
+    imageUrl: "/eshop.png",
+  },
+  {
+    title: "Nonis - Movie Seeker",
+    description:
+      "This project, Unraveling Noni's World, was undertaken to enhance my frontend development skills using Next.js, a popular React framework. The goal was to gain hands-on experience with Next.js and explore its features and capabilities.",
+    tags: ["typescript", "next", "react", "redux", "react-stitches"],
+    imageUrl: "/movieseeker.png",
+  },
+  {
+    title: "Color Picker - Chrome Extension",
+    description:
+      "Color Picker - Nonis is a powerful tool designed specifically for developers and UI/UX designers. It provides an intuitive interface to generate colors, copy them, and seamlessly add them to your palette. With Color Picker - Nonis, you can effortlessly create harmonious color schemes and have them readily available for your design projects. Simplify your color workflow and elevate your design process with Color Picker - Nonis.",
+    tags: ["typescript", "react", "git", "html", "css"],
+    imageUrl: "/colorpicker.png",
+  },
+  {
+    title: "Password Generator - Chrome Extension",
+    description:
+      "Generate strong and secure passwords with Password Generator - Nonis. Customize password length and choose from options like uppercase letters, lowercase letters, numbers, and special characters. Includes a password strength indicator and history section for easy reference. Keep your accounts secure with ease!",
+    tags: ["typescript", "react", "git", "html", "css"],
+    imageUrl: "/pwdgenerator.jpg",
+  },
+] as const;

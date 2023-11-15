@@ -6,11 +6,19 @@ import Link from "next/link";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
-// import CV from "@/config/LinkedinCV.pdf";
+import { useSectionInView } from "@/hooks";
+import { useActiveSectionContext } from "@/context/active-section-contenxt";
 
 const Intro = () => {
+  const { ref } = useSectionInView("Home", 0.5);
+  const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
+
   return (
-    <section className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]">
+    <section
+      className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]"
+      ref={ref}
+      id="home"
+    >
       <div className="flex items-center justify-center">
         <div className="relative">
           <motion.div
@@ -70,6 +78,10 @@ const Intro = () => {
         <Link
           href={"#contact"}
           className="bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full"
+          onClick={() => {
+            setActiveSection("Contact");
+            setTimeOfLastClick(Date.now());
+          }}
         >
           Contact me here <BsArrowRight />
         </Link>
