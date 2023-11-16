@@ -48,11 +48,11 @@ export const experiencesData = [
      Participated in code reviews and provided constructive feedback to other developers.
      Built reusable code for future use.
      Stayed up-to-date on emerging technologies.`,
-    icon: React.createElement(CgWorkAlt),
+    icon: React.createElement(FaReact),
     date: "Sep 2020 - Sep 2021",
   },
   {
-    title: "Front-end Developer - Intern - RaskRask",
+    title: "Front-end Developer Intern - RaskRask",
     location: "Aarhus, Denmark",
     description:
       "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
