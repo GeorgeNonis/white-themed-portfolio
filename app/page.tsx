@@ -1,5 +1,6 @@
 import {
   About,
+  Contact,
   Experience,
   Intro,
   Projects,
@@ -16,6 +17,7 @@ const Home = () => {
       <Projects />
       <Skills />
       <Experience />
+      <Contact />
     </main>
   );
 };
