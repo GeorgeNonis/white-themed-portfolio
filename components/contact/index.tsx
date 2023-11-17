@@ -4,9 +4,11 @@ import { useSectionInView } from "@/hooks";
 import SectionHeading from "../section-heading";
 import { FaPaperPlane } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { useContact } from "./useContact";
 
 const Contact = () => {
   const { ref } = useSectionInView("Contact");
+  const { formHandler } = useContact();
   return (
     <motion.section
       id="contact"
@@ -35,7 +37,12 @@ const Contact = () => {
         <br />
         or through this form.
       </p>
-      <form className="mt-10 flex flex-col dark:text-black">
+      <form
+        className="mt-10 flex flex-col dark:text-black"
+        action={async (formData) => {
+          await formHandler(formData);
+        }}
+      >
         <input
           type="email"
           name="email"
