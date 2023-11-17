@@ -4,11 +4,10 @@ import { useSectionInView } from "@/hooks";
 import SectionHeading from "../section-heading";
 import { FaPaperPlane } from "react-icons/fa";
 import { motion } from "framer-motion";
-import { useContact } from "./useContact";
+import { formHandler } from "./action";
 
 const Contact = () => {
   const { ref } = useSectionInView("Contact");
-  const { formHandler } = useContact();
   return (
     <motion.section
       id="contact"
