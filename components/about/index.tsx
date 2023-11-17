@@ -43,7 +43,7 @@ const About = () => {
         <span className="font-medium">learning new things</span>. I am currently
         reading a book about
         <br />
-        <span className="font-medium">psychology</span>
+        <span className="font-medium">psychology.</span>
       </p>
     </motion.section>
   );

@@ -5,9 +5,12 @@ import SectionHeading from "../section-heading";
 import { FaPaperPlane } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { formHandler } from "./action";
+import { experimental_useFormStatus } from "react-dom";
 
 const Contact = () => {
   const { ref } = useSectionInView("Contact");
+  const { pending } = experimental_useFormStatus();
+  console.log({ pending });
   return (
     <motion.section
       id="contact"
@@ -57,6 +60,7 @@ const Contact = () => {
         />
         <button
           type="submit"
+          disabled={pending}
           className="group flex items-center justify-center gap-2 h-[3rem] w-[8rem] bg-gray-900 text-white rounded-full outline-none transition-all focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 dark:bg-white dark:bg-opacity-10 disabled:scale-100 disabled:bg-opacity-65"
         >
           Sumbit{" "}
