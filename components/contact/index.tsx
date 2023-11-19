@@ -1,17 +1,15 @@
 "use client";
 
-import { useSectionInView } from "@/hooks";
 import SectionHeading from "../section-heading";
-import { FaPaperPlane } from "react-icons/fa";
 import { motion } from "framer-motion";
-import { formHandler } from "./action";
-import { experimental_useFormStatus } from "react-dom";
+import { formHandler } from "./hook/action";
 import SubmitBtn from "./comps/submit-button";
+import { useContact } from "./hook/useContact";
 
 const Contact = () => {
-  const { ref } = useSectionInView("Contact");
-  const { pending } = experimental_useFormStatus();
-  console.log({ pending });
+  const { handlers, values } = useContact();
+  const { ref, formValues, loading } = values;
+  const { formValuesHandler, formSumbitHandler } = handlers;
   return (
     <motion.section
       id="contact"
@@ -42,24 +40,28 @@ const Contact = () => {
       </p>
       <form
         className="mt-10 flex flex-col dark:text-black"
-        action={formHandler}
+        action={formSumbitHandler}
       >
         <input
+          value={formValues.email}
           type="email"
           name="email"
+          onChange={formValuesHandler}
           className="h-14 px-4 rounded-lg borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
           required
           maxLength={300}
           placeholder="Your Email"
         />
         <textarea
+          value={formValues.message}
+          onChange={formValuesHandler}
           className="h-52 my-3 rounded-lg borderBlack p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
           placeholder="Your Message"
           name="message"
           required
           maxLength={300}
         />
-        <SubmitBtn />
+        <SubmitBtn loading={loading} />
       </form>
     </motion.section>
   );

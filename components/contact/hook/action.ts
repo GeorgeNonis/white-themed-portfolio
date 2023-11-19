@@ -1,12 +1,10 @@
 "use server";
 import { getErrorMessage, validateString } from "@/utils";
 import { Resend } from "resend";
+import { FormHandlerProps } from "./action.types";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-export const formHandler = async (formData: FormData) => {
-  const email = formData.get("email");
-  const message = formData.get("message") || "";
-
+export const formHandler = async ({ email, message }: FormHandlerProps) => {
   if (!validateString(email, 300)) {
     return {
       error: "Invalid sender email",
