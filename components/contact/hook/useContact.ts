@@ -1,5 +1,5 @@
 import { useSectionInView } from "@/hooks";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, FormEvent, FormEventHandler, useState } from "react";
 import { formHandler } from "./action";
 
 export const useContact = () => {
@@ -15,7 +15,8 @@ export const useContact = () => {
     setFormValues((prevValues) => ({ ...prevValues, [name]: value }));
   };
 
-  const formSumbitHandler = async () => {
+  const formSumbitHandler = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     setLoading(true);
     await formHandler({ ...formValues });
 
