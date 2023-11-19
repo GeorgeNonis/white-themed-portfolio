@@ -1,3 +1,4 @@
+export { default as Footer } from "./footer";
 export { default as Contact } from "./contact";
 export { default as Experience } from "./experience";
 export { default as Skills } from "./skills";
