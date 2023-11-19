@@ -1,6 +1,8 @@
 import {
   About,
+  Contact,
   Experience,
+  Footer,
   Intro,
   Projects,
   SectionDivider,
@@ -16,6 +18,8 @@ const Home = () => {
       <Projects />
       <Skills />
       <Experience />
+      <Contact />
+      <Footer />
     </main>
   );
 };
