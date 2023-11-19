@@ -1,6 +1,7 @@
 import { useSectionInView } from "@/hooks";
-import { ChangeEvent, FormEvent, FormEventHandler, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { formHandler } from "./action";
+import toast from "react-hot-toast";
 
 export const useContact = () => {
   const [formValues, setFormValues] = useState({ email: "", message: "" });
@@ -18,7 +19,14 @@ export const useContact = () => {
   const formSumbitHandler = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    await formHandler({ ...formValues });
+    const { error } = await formHandler({ ...formValues });
+    if (error) {
+      toast.error(error);
+      console.log("error");
+    } else {
+      console.log("success");
+      toast.success("Email sent successfully!");
+    }
 
     setFormValues({ email: "", message: "" });
     setLoading(false);

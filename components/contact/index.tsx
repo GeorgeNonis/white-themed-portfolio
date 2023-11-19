@@ -2,7 +2,6 @@
 
 import SectionHeading from "../section-heading";
 import { motion } from "framer-motion";
-import { formHandler } from "./hook/action";
 import SubmitBtn from "./comps/submit-button";
 import { useContact } from "./hook/useContact";
 

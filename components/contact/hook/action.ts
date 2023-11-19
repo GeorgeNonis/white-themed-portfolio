@@ -30,8 +30,5 @@ export const formHandler = async ({ email, message }: FormHandlerProps) => {
       error: getErrorMessage(error),
     };
   }
-
-  return {
-    data,
-  };
+  return {};
 };
