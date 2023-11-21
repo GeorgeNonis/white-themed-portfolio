@@ -12,23 +12,37 @@ export type ThemeSwitchContextType = {
   themeHandler: () => void;
 };
 
+export type Theme = "light" | "dark";
+
 export const ThemeSwitchContext = createContext<ThemeSwitchContextType | null>(
   null
 );
 
 export const ThemeSwitchProvider = ({ children }: { children: ReactNode }) => {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [theme, setTheme] = useState<Theme>("light");
   const themeHandler = () => {
-    const newTtheme = theme === "light" ? "dark" : "light";
-    window.localStorage.setItem("theme", newTtheme);
-    setTheme(newTtheme);
+    if (theme === "light") {
+      setTheme("dark");
+      window.localStorage.setItem("theme", "dark");
+      document.documentElement.classList.add("dark");
+    } else {
+      setTheme("light");
+      window.localStorage.setItem("theme", "light");
+      document.documentElement.classList.remove("dark");
+    }
   };
 
   useEffect(() => {
-    const theme = window.localStorage.getItem("theme");
+    const localTheme = window.localStorage.getItem("theme") as Theme | null;
 
-    if (theme === null) {
-      window.localStorage.setItem("theme", "light");
+    if (localTheme) {
+      setTheme(localTheme);
+      if (localTheme === "dark") {
+        document.documentElement.classList.add("dark");
+      }
+    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      setTheme("dark");
+      document.documentElement.classList.add("dark");
     }
   }, []);
   return (

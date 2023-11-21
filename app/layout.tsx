@@ -57,8 +57,8 @@ export default function RootLayout({
             <Header />
             <Toaster />
             {children}
+            <ThemeSwitch />
           </ActiveSectionContenxtProvider>
-          <ThemeSwitch />
         </ThemeSwitchProvider>
       </body>
     </html>
