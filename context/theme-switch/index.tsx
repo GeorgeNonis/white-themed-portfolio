@@ -1,4 +1,5 @@
-import { ReactNode, createContext, useState } from "react";
+"use client";
+import { ReactNode, createContext, useContext, useState } from "react";
 
 export type ThemeSwitchContextType = {
   theme: string;
@@ -20,4 +21,17 @@ export const ThemeSwitchProvider = ({ children }: { children: ReactNode }) => {
       {children}
     </ThemeSwitchContext.Provider>
   );
+};
+
+// GUARD
+export const useThemeSwitchContext = () => {
+  const context = useContext(ThemeSwitchContext);
+
+  if (context === null) {
+    throw new Error(
+      "useActiveSectionContext must be used within an ActiveSectionContextProvider"
+    );
+  }
+
+  return context;
 };
