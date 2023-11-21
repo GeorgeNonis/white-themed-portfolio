@@ -1,3 +1,4 @@
+export { default as ThemeSwitch } from "./theme-switch";
 export { default as Footer } from "./footer";
 export { default as Contact } from "./contact";
 export { default as Experience } from "./experience";
