@@ -1,4 +1,4 @@
-import { Header } from "@/components";
+import { Header, ThemeSwitch } from "@/components";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { ActiveSectionContenxtProvider } from "@/context/active-section-contenxt";
@@ -56,6 +56,7 @@ export default function RootLayout({
           <Toaster />
           {children}
         </ActiveSectionContenxtProvider>
+        <ThemeSwitch />
       </body>
     </html>
   );
