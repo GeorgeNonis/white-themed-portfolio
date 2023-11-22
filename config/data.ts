@@ -54,8 +54,14 @@ export const experiencesData = [
   {
     title: "Front-end Developer Intern - RaskRask",
     location: "Aarhus, Denmark",
-    description:
-      "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
+    description: `Collaborated on all phases of development, from planning and prototyping to design, implementation, and maintenance, utilizing Typescript, React.js, Next.js, and Ionic.
+      Implemented and maintained responsive designs ensuring cross-browser compatibility.
+      Developed stories for the company's NPM package.
+      Kept abreast of emerging technologies.
+      Tested applications with Cypress and Jest.
+      Applied Object Oriented Programming (OOP) principles.
+      Utilized Atomic Design Principles in projects.
+      Demonstrated proficiency in web development with Reactjs and Nextjs.`,
     icon: React.createElement(FaReact),
     date: "July 2023 - September 2023",
   },
