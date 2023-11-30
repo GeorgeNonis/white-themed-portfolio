@@ -106,7 +106,7 @@ export const projectsData = [
     title: "Car Rental",
     description: `This sleek web application is crafted using the robust trio of React, TypeScript, and Tailwind CSS, ensuring a fully responsive and intuitive user experience.`,
     tags: ["typescript", "react", "tailwind", "twin-macro", "responsive"],
-    imageUrl: "/carrental.png",
+    imageUrl: "/carRental.png",
   },
   {
     title: "E-Shop",
