@@ -98,7 +98,7 @@ export const projectsData = [
   {
     title: "Nonis Components",
     description:
-      "Nonis Components is a React and TypeScript package designed to streamline web development. By integrating TypeScript, it offers robust typing and developer-friendly features, enhancing code reliability and maintainability. The package aims to accelerate development workflows. ",
+      "My own NPM Package - NonisComponents, is a collection of UI components built with React and TypeScript, designed to streamline web development. By integrating TypeScript, it offers robust typing and developer-friendly features, enhancing code reliability and maintainability. This package focuses on providing a range of UI components that accelerate development workflows, making it easier for developers to create visually appealing and functional interfaces efficiently. ",
     tags: ["typescript", "react", "stitches/react", "rollup.js"],
     imageUrl: "/npm.jpg",
   },
