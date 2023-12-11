@@ -96,6 +96,13 @@ export const skillsData = [
 
 export const projectsData = [
   {
+    title: "Nonis Components",
+    description:
+      "Nonis Components is a React and TypeScript package designed to streamline web development. By integrating TypeScript, it offers robust typing and developer-friendly features, enhancing code reliability and maintainability. The package aims to accelerate development workflows. ",
+    tags: ["typescript", "react", "stitches/react", "rollup.js"],
+    imageUrl: "/npm.jpg",
+  },
+  {
     title: "Note Manager",
     description:
       "Introducing a full-stack TypeScript web app designed for efficient note management. Enjoy a range of features including easy reordering, pinning and unpinning notes, as well as convenient account settings. Experience the seamless usability of our mobile-friendly interface, ensuring smooth note management on the go.",
