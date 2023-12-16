@@ -72,7 +72,7 @@ export const skillsData = [
   "CSS",
   "JavaScript",
   "TypeScript",
-  "React",
+  "React.js",
   "Next.js",
   "Ionic",
   "Three.js",
@@ -88,20 +88,14 @@ export const skillsData = [
   "MobX",
   "GraphQL",
   "Apollo",
-  "Express",
+  "Express.js",
+  "Nest.js",
   "Python",
   "Framer Motion",
   "Figma",
 ] as const;
 
 export const projectsData = [
-  {
-    title: "Nonis Components",
-    description:
-      "My own NPM Package - NonisComponents, is a collection of UI components built with React and TypeScript, designed to streamline web development. By integrating TypeScript, it offers robust typing and developer-friendly features, enhancing code reliability and maintainability. This package focuses on providing a range of UI components that accelerate development workflows, making it easier for developers to create visually appealing and functional interfaces efficiently. ",
-    tags: ["typescript", "react", "stitches/react", "rollup.js"],
-    imageUrl: "/npm.jpg",
-  },
   {
     title: "Note Manager",
     description:
