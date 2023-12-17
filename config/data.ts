@@ -97,6 +97,13 @@ export const skillsData = [
 
 export const projectsData = [
   {
+    title: "Nonis Components",
+    description:
+      "My own NPM Package - NonisComponents, is a collection of UI components built with React and TypeScript, designed to streamline web development. By integrating TypeScript, it offers robust typing and developer-friendly features, enhancing code reliability and maintainability. This package focuses on providing a range of UI components that accelerate development workflows, making it easier for developers to create visually appealing and functional interfaces efficiently. ",
+    tags: ["typescript", "react", "stitches/react", "rollup.js"],
+    imageUrl: "/npm.jpg",
+  },
+  {
     title: "Note Manager",
     description:
       "Introducing a full-stack TypeScript web app designed for efficient note management. Enjoy a range of features including easy reordering, pinning and unpinning notes, as well as convenient account settings. Experience the seamless usability of our mobile-friendly interface, ensuring smooth note management on the go.",
