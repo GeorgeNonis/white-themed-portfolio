@@ -65,6 +65,16 @@ export const experiencesData = [
     icon: React.createElement(FaReact),
     date: "July 2023 - September 2023",
   },
+  {
+    title: "Software Engineer - Stibo DX",
+    location: "Aarhus, Denmark",
+    description: `Joined an international, hybrid team to develop CUE Autopilot, an AI product enhancing editorial efficiency, involving the investigation and application of new AI technologies from scratch.
+    Defined architecture and implemented the solution with ongoing updates to AI service interfaces, utilizing SAFe and scrum methodologies for project management.
+    Demonstrated deep interest in AI, with a focus on innovative technology investigation and effective communication of findings in a collaborative, international team environment.
+    Contributed to a family-like workplace culture at a leading provider of digital experience platforms, engaging in professional growth and community activities within a diverse, international setting.`,
+    icon: React.createElement(FaReact),
+    date: "February 2024 - Present",
+  },
 ] as const;
 
 export const skillsData = [
