@@ -83,38 +83,56 @@ Thrive in a collaborative, trust-based environment focused on ownership, continu
 ] as const;
 
 export const skillsData = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "OOP",
-  "SRP",
-  "TypeScript",
-  "React.js",
-  "Next.js",
+  // Core Frontend
   "Angular",
-  "Ionic",
-  "Three.js",
+  "TypeScript",
+  "JavaScript",
+  "HTML",
+  "SCSS",
+
+  // Architecture & Principles
+  "OOP",
+  "SOLID Principles",
+  "Microservices Architecture",
+
+  // Backend
+  "Node.js",
+  "NestJS",
+  "Express.js",
+  "REST APIs",
+  "JWT Authentication",
+
+  // Cloud & Platform
+  "Kubernetes",
+  "OpenShift",
+  "Docker",
+  "Podman",
+  "GitOps (ArgoCD)",
+  "CI/CD",
+  "Kong API Gateway",
+  "Lua",
+  "CUE",
+
+  // Observability
+  "Prometheus",
+  "Grafana",
+  "Loki",
+
+  // Data & APIs
+  "MongoDB",
+  "GraphQL",
+
+  // Testing
   "Jest",
   "Cypress",
-  "Node.js",
+
+  // Dev Workflow
   "Git",
-  "BitBucket",
+  "GitHub Actions",
   "Jira",
-  "Tailwind",
-  "SCSS",
-  "SASS",
-  "Emotion.js",
-  "React Stitches",
-  "MongoDB",
-  "Redux",
-  "MobX",
-  "GraphQL",
-  "Apollo",
-  "Express.js",
-  "Nest.js",
-  "Python",
-  "Framer Motion",
-  "Figma",
+
+  // AI Exposure
+  "AI Integrations",
 ] as const;
 
 export const projectsData = [
