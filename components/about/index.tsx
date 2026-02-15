@@ -1,9 +1,8 @@
 "use client";
 
-import React from "react";
+import { useSectionInView } from "@/hooks";
 import { motion } from "framer-motion";
 import SectionHeading from "../section-heading";
-import { useSectionInView } from "@/hooks";
 
 const About = () => {
   const { ref } = useSectionInView("About");
@@ -18,32 +17,45 @@ const About = () => {
       id="about"
     >
       <SectionHeading>About me</SectionHeading>
+
       <p className="mb-3">
-        I&apos;m a passionate fullstack developer with experience in TypeScript
-        and JavaScript, and expertise in frameworks like React, Node.js.
-        Currently, I&apos;m expanding my knowledge in Next.js.
+        I&apos;m a Software Engineer building cloud-native SaaS products, with a
+        strong focus on frontend development using{" "}
+        <span className="font-medium">Angular</span> and{" "}
+        <span className="font-medium">TypeScript</span>. I enjoy working in
+        teams where honesty, trust, and a safe environment make it easy to
+        learn, share feedback, and grow together.
       </p>
-      <p>
+
+      <p className="mb-3">
+        I like being involved end-to-end: implementing features, debugging real
+        production issues, talking with stakeholders/customers, and helping
+        shape architectural decisions when it matters.
+      </p>
+
+      <p className="mb-3">
+        Recently, I&apos;ve been expanding more into the platform side —{" "}
+        <span className="italic">deployments and DevOps</span> — working with{" "}
+        <span className="font-medium">Kubernetes/OpenShift</span>,{" "}
+        <span className="font-medium">GitOps (ArgoCD)</span>, API gateway
+        maintenance, and observability tooling like{" "}
+        <span className="font-medium">Prometheus, Grafana, and Loki</span>. My
+        goal is simple: help teams ship safely and keep systems reliable.
+      </p>
+
+      <p className="mb-3">
         <span className="italic">My favorite part of programming</span> is the
         problem-solving aspect. I <span className="underline">love</span> the
-        feeling of finally figuring out a solution to a problem.
+        feeling of finally figuring out a solution — and making it clean,
+        maintainable, and easy for others to work with.
       </p>
-      <p className="mb-3">
-        <span>
-          As an individual, I&apos;m motivated to understand how things work and
-          continually expand my knowledge in frontend and backend development.
-          My main aim is to deliver high-quality code and enjoy the journey of
-          coding, which brings me great happiness.
-        </span>
-      </p>
+
       <p className="mb-3">
         <span className="italic">When I&apos;m not coding</span>, I enjoy
-        playing video games, goin to the gym or free diving. I also enjoy
-        <br />
-        <span className="font-medium">learning new things</span>. I am currently
-        reading a book about
-        <br />
-        <span className="font-medium">psychology.</span>
+        gaming, going to the gym, or free diving. I also love{" "}
+        <span className="font-medium">learning new things</span> — lately,
+        I&apos;ve been reading about{" "}
+        <span className="font-medium">psychology</span>.
       </p>
     </motion.section>
   );

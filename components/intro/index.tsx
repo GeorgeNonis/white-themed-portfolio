@@ -1,13 +1,13 @@
 "use client";
-import Image from "next/image";
+import { useActiveSectionContext } from "@/context/active-section-contenxt";
+import { useSectionInView } from "@/hooks";
 import MyImage from "@/public/me.png";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
-import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
-import { useSectionInView } from "@/hooks";
-import { useActiveSectionContext } from "@/context/active-section-contenxt";
+import { HiDownload } from "react-icons/hi";
 
 const Intro = () => {
   const { ref } = useSectionInView("Home", 0.5);
@@ -61,11 +61,13 @@ const Intro = () => {
         I&apos;m a <span className="font-bold">
           full-stack developer
         </span> with <br />
-        <span className="font-bold">almost 2 years</span> of experience. I enjoy
+        <span className="font-bold">3 years</span> of experience. I enjoy
         <br />
-        building <span className="italic">sites & apps</span>. My focus is
+        <span className="italic"> working across the stack</span>.
         <br />
-        <span className="underline">React (Next.js)</span>.
+        From <span className="underline">Angular frontend</span> features to{" "}
+        <span className="underline">Kubernetes-based</span> deployments and{" "}
+        <span className="underline">GitOps workflows</span>.
       </motion.h1>
       <motion.div
         className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium"
