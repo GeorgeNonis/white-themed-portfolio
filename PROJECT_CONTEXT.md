@@ -52,6 +52,7 @@ npm run start
 ### Navbar (`components/header/index.tsx`)
 
 - **Dark mode (2026-07-09):** `#162032` surface, `white/10` border, indigo active pill (`indigo-500/20` + `indigo-400/35` ring), inactive links `gray-400` → hover `white`, active link `white`. Light mode unchanged.
+- Theme toggle (`components/theme-switch/index.tsx`) uses the same dark surface/border as the navbar.
 - Section highlight on scroll via `useSectionInView` in `hooks/index.ts` (default threshold `0.75`). Tall sections need lower threshold — **Experience** uses `0.2` (same as Projects); without it the timeline never reaches 75% viewport visibility and the nav link never activates.
 
 ### Theme hydration
@@ -86,7 +87,7 @@ node scripts/capture-portfolio-shots.mjs
 
 ## Known follow-ups
 
-- Color Picker `demoUrl` — swap to Chrome Web Store slug when confirmed live.
+- Add new project cards when public repos ship.
 
 ## Local dev (Windows)
 
