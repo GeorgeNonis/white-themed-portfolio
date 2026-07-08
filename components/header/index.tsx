@@ -30,9 +30,9 @@ const Header = () => {
     sm:h-[3.25rem]
     sm:w-[36rem]
     sm:rounded-full 
-    dark:bg-gray-950 
-    dark:border-black/40
-    dark:bg-opacity-75"
+    dark:bg-[#162032]
+    dark:border-white/10
+    dark:shadow-black/25"
         initial={{ y: -100, x: "-50%", opacity: 0 }}
         animate={{ y: 0, x: "-50%", opacity: 1 }}
       ></motion.div>
@@ -49,9 +49,9 @@ const Header = () => {
                 <Link
                   href={link.hash}
                   className={clsx(
-                    "relative flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:text-gray-white dark:hover:text-gray-300",
+                    "relative flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:text-gray-400 dark:hover:text-white",
                     {
-                      "text-gray-950 dark:text-gray-200":
+                      "text-gray-950 dark:text-white":
                         activeSection === link.name,
                     }
                   )}
@@ -63,7 +63,7 @@ const Header = () => {
                   {link.name}
                   {link.name === activeSection && (
                     <motion.span
-                      className="bg-gray-100 rounded-full absolute inset-0 -z-10 dark:bg-gray-800"
+                      className="bg-gray-100 rounded-full absolute inset-0 -z-10 dark:bg-indigo-500/20 dark:ring-1 dark:ring-indigo-400/35"
                       layoutId="activeSection"
                       transition={{
                         type: "spring",
