@@ -9,13 +9,16 @@ import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { FaGithubSquare } from "react-icons/fa";
 import { HiDownload } from "react-icons/hi";
 
+const actionButtonClass =
+  "inline-flex items-center justify-center gap-2 rounded-full borderBlack outline-none transition cursor-pointer hover:scale-105 focus:scale-105 active:scale-[1.02]";
+
 const Intro = () => {
   const { ref } = useSectionInView("Home", 0.5);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
 
   return (
     <section
-      className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]"
+      className="mb-28 max-w-[44rem] text-center sm:mb-0 scroll-mt-[100rem]"
       ref={ref}
       id="home"
     >
@@ -28,12 +31,12 @@ const Intro = () => {
           >
             <Image
               src={MyImage}
-              alt="my image"
+              alt="Giorgos Nonis"
               width={"192"}
               height={"192"}
               quality={"95"}
               priority
-              className="h-24 w-24 rounded-full border-[0.35rem] border-white object-cover shadow-xl"
+              className="h-24 w-24 rounded-full border-[0.35rem] border-cyan-200 object-cover shadow-xl dark:border-cyan-400/40"
             />
           </motion.div>
           <motion.span
@@ -52,25 +55,23 @@ const Intro = () => {
         </div>
       </div>
       <motion.h1
-        className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
+        className="mb-8 mt-4 px-4 text-xl font-medium !leading-[1.55] sm:text-2xl"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
         <span className="font-bold">Hello, I&apos;m Giorgos.</span>
         <br />
-        I&apos;m a <span className="font-bold">
-          full-stack developer
-        </span> with <br />
-        <span className="font-bold">3 years</span> of experience. I enjoy
+        <span className="font-bold">Software Engineer</span> at Stibo DX —{" "}
+        <span className="italic">cloud-native SaaS on Cue</span> (Cue Autopilot).
         <br />
-        <span className="italic"> working across the stack</span>.
-        <br />
-        From <span className="underline">Angular frontend</span> features to{" "}
-        <span className="underline">Kubernetes-based</span> deployments and{" "}
-        <span className="underline">GitOps workflows</span>.
+        Mostly <span className="underline">Angular/TypeScript</span> frontend;
+        platform work in{" "}
+        <span className="underline">Kubernetes</span>,{" "}
+        <span className="underline">GitOps</span>,{" "}
+        <span className="underline">Kong</span>, and observability.
       </motion.h1>
       <motion.div
-        className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium"
+        className="flex flex-col sm:flex-row items-center justify-center gap-3 px-4 text-base font-medium"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
@@ -79,7 +80,7 @@ const Intro = () => {
       >
         <Link
           href={"#contact"}
-          className="bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full"
+          className={`${actionButtonClass} bg-gray-900 text-white px-7 py-3 dark:bg-cyan-700 dark:hover:bg-cyan-600`}
           onClick={() => {
             setActiveSection("Contact");
             setTimeOfLastClick(Date.now());
@@ -88,28 +89,32 @@ const Intro = () => {
           Contact me here <BsArrowRight />
         </Link>
         <a
-          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"
+          className={`${actionButtonClass} group bg-white px-7 py-3 dark:bg-white/10 dark:text-white/80`}
           href={"/CV.pdf"}
           download
         >
           Download CV
-          <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
+          <HiDownload className="opacity-60 group-hover:translate-y-0.5 transition" />
         </a>
 
         <a
-          className="bg-white p-4 text-gray-700 hover:text-gray-950 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
-          href="https://www.linkedin.com/in/george-nonis/"
+          className={`${actionButtonClass} bg-white p-4 text-gray-700 hover:text-gray-950 dark:bg-white/10 dark:text-white/60`}
+          href="https://www.linkedin.com/in/george-nonis-697430234/"
           target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn profile"
         >
-          <BsLinkedin />
+          <BsLinkedin className="text-xl" />
         </a>
 
         <a
-          className="bg-white p-4 text-gray-700 flex items-center gap-2 text-[1.35rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
+          className={`${actionButtonClass} bg-white p-4 text-gray-700 hover:text-gray-950 dark:bg-white/10 dark:text-white/60`}
           href="https://github.com/GeorgeNonis/"
           target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub profile"
         >
-          <FaGithubSquare />
+          <FaGithubSquare className="text-[1.35rem]" />
         </a>
       </motion.div>
     </section>

@@ -19,43 +19,44 @@ const About = () => {
       <SectionHeading>About me</SectionHeading>
 
       <p className="mb-3">
-        I&apos;m a Software Engineer building cloud-native SaaS products, with a
-        strong focus on frontend development using{" "}
-        <span className="font-medium">Angular</span> and{" "}
-        <span className="font-medium">TypeScript</span>. I enjoy working in
-        teams where honesty, trust, and a safe environment make it easy to
-        learn, share feedback, and grow together.
+        Software Engineer at Stibo DX — cloud-native SaaS on Cue (Cue Autopilot).
+        Mostly frontend in{" "}
+        <span className="font-medium">Angular/TypeScript</span>; I also work on
+        platform pieces — production{" "}
+        <span className="font-medium">Kubernetes</span>,{" "}
+        <span className="font-medium">GitOps</span>,{" "}
+        <span className="font-medium">Kong</span>, and observability.
       </p>
 
       <p className="mb-3">
-        I like being involved end-to-end: implementing features, debugging real
-        production issues, talking with stakeholders/customers, and helping
-        shape architectural decisions when it matters.
+        Career changer in Aarhus. I picked up programming on my own around 2020,
+        moved to Denmark in 2021, and went full-time into software engineering
+        in 2023 — self-taught, then a frontend internship at RaskRask, then
+        Stibo DX.
       </p>
 
       <p className="mb-3">
-        Recently, I&apos;ve been expanding more into the platform side —{" "}
-        <span className="italic">deployments and DevOps</span> — working with{" "}
-        <span className="font-medium">Kubernetes/OpenShift</span>,{" "}
-        <span className="font-medium">GitOps (ArgoCD)</span>, API gateway
-        maintenance, and observability tooling like{" "}
-        <span className="font-medium">Prometheus, Grafana, and Loki</span>. My
-        goal is simple: help teams ship safely and keep systems reliable.
+        Outside work I mentor aspiring developers. In my free time I build and
+        ship small projects — lately Chrome extensions (password generator, color
+        picker), public on GitHub.
       </p>
 
-      <p className="mb-3">
-        <span className="italic">My favorite part of programming</span> is the
-        problem-solving aspect. I <span className="underline">love</span> the
-        feeling of finally figuring out a solution — and making it clean,
-        maintainable, and easy for others to work with.
-      </p>
+      <SectionHeading>Beyond code</SectionHeading>
+
+      <div className="mb-6 aspect-video w-full max-w-xl mx-auto overflow-hidden rounded-lg shadow-lg">
+        <iframe
+          className="h-full w-full"
+          src="https://www.youtube.com/embed/qskmwnxSEGQ"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          title="Free diving highlights"
+        />
+      </div>
 
       <p className="mb-3">
-        <span className="italic">When I&apos;m not coding</span>, I enjoy
-        gaming, going to the gym, or free diving. I also love{" "}
-        <span className="font-medium">learning new things</span> — lately,
-        I&apos;ve been reading about{" "}
-        <span className="font-medium">psychology</span>.
+        I volunteer as a mentor — one-on-one support and class mentoring for
+        people learning to code. Free diving is where I recharge; building and
+        shipping small tools is how I keep my craft sharp outside work.
       </p>
     </motion.section>
   );

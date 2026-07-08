@@ -12,7 +12,7 @@ const Experience = () => {
   return (
     <section id="experience" ref={ref} className="scroll-mt-28 mb-28 sm:mb-40">
       <SectionHeading>My Experience</SectionHeading>
-      <VerticalTimeline lineColor="">
+      <VerticalTimeline lineColor="rgba(99, 102, 241, 0.35)">
         {experiencesData.map((experience, index) => (
           <ExperienceComp key={index} {...experience} />
         ))}

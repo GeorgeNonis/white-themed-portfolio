@@ -3,7 +3,7 @@ import {
   ReactNode,
   createContext,
   useContext,
-  useEffect,
+  useLayoutEffect,
   useState,
 } from "react";
 
@@ -18,35 +18,51 @@ export const ThemeSwitchContext = createContext<ThemeSwitchContextType | null>(
   null
 );
 
+function getInitialTheme(): Theme {
+  if (typeof window === "undefined") {
+    return "light";
+  }
+
+  // Match the beforeInteractive script in layout.tsx (single source of truth).
+  if (document.documentElement.classList.contains("dark")) {
+    return "dark";
+  }
+
+  const localTheme = window.localStorage.getItem("theme") as Theme | null;
+
+  if (localTheme) {
+    return localTheme;
+  }
+
+  if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    return "dark";
+  }
+
+  return "light";
+}
+
 export const ThemeSwitchProvider = ({ children }: { children: ReactNode }) => {
   const [theme, setTheme] = useState<Theme>("light");
+  const [ready, setReady] = useState(false);
+
+  useLayoutEffect(() => {
+    setTheme(getInitialTheme());
+    setReady(true);
+  }, []);
+
   const themeHandler = () => {
-    if (theme === "light") {
-      setTheme("dark");
-      window.localStorage.setItem("theme", "dark");
-      document.documentElement.classList.add("dark");
-    } else {
-      setTheme("light");
-      window.localStorage.setItem("theme", "light");
-      document.documentElement.classList.remove("dark");
-    }
+    setTheme((current) => {
+      const next: Theme = current === "light" ? "dark" : "light";
+      window.localStorage.setItem("theme", next);
+      document.documentElement.classList.toggle("dark", next === "dark");
+      return next;
+    });
   };
 
-  useEffect(() => {
-    const localTheme = window.localStorage.getItem("theme") as Theme | null;
+  const resolvedTheme = ready ? theme : getInitialTheme();
 
-    if (localTheme) {
-      setTheme(localTheme);
-      if (localTheme === "dark") {
-        document.documentElement.classList.add("dark");
-      }
-    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      setTheme("dark");
-      document.documentElement.classList.add("dark");
-    }
-  }, []);
   return (
-    <ThemeSwitchContext.Provider value={{ theme, themeHandler }}>
+    <ThemeSwitchContext.Provider value={{ theme: resolvedTheme, themeHandler }}>
       {children}
     </ThemeSwitchContext.Provider>
   );

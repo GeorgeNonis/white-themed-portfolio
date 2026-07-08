@@ -7,7 +7,33 @@
 }
 html {
   --line-color: #e5e7eb;
+  overflow-x: hidden;
 }
 html.dark {
-  --line-color: rgba(255, 255, 255, 0.2);
+  --line-color: rgba(99, 102, 241, 0.35);
+}
+
+.vertical-timeline.vertical-timeline--two-columns
+  .vertical-timeline-element-content
+  p {
+  margin: 0;
+}
+
+html.dark .vertical-timeline-element-content {
+  background: #1c1c1f !important;
+  color: #f4f4f5 !important;
+}
+
+html.dark .vertical-timeline-element-content h3 {
+  color: #f4f4f5 !important;
+}
+
+html.dark .vertical-timeline-element-content p {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+html.dark
+  .vertical-timeline-element-content
+  p:first-of-type {
+  color: rgba(199, 210, 254, 0.8) !important;
 }

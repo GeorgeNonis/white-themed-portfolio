@@ -1,7 +1,3 @@
-import React from "react";
-import { CgWorkAlt } from "react-icons/cg";
-import { FaReact } from "react-icons/fa";
-
 export const links = [
   {
     name: "Home",
@@ -31,157 +27,92 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "IT - APK Garage",
-    location: "Nicosia, Cyprus",
-    description: `Checking computer hardware (HDD, mice, keyboards, etc.) to ensure functionality.
-      Installing and configuring appropriate software and functions according to specifications.
-      Organizing and scheduling upgrades and maintenance without impeding others' work.
-      Performing troubleshooting to diagnose and resolve problems (repair or replace parts, debugging, etc.).`,
-    icon: React.createElement(CgWorkAlt),
-    date: "Dec 2019 - Aug 2020",
+    title: "Volunteer Mentor",
+    location: "Denmark",
+    description: `One-on-one support and class mentoring for people learning to code.`,
+    iconKey: "mentor",
+    date: "Dec 2025 - Present",
   },
   {
-    title: "Front-End Developer - Nina Global",
-    location: "Nicosia, Cyprus",
-    description: `Developed the frontend of an application from scratch based on Figma mockups.
-     Implemented responsive design and ensured cross-browser compatibility.
-     Participated in code reviews and provided constructive feedback to other developers.
-     Built reusable code for future use.
-     Stayed up-to-date on emerging technologies.`,
-    icon: React.createElement(FaReact),
-    date: "Sep 2020 - Sep 2021",
+    title: "Software Engineer",
+    location: "Stibo DX · Aarhus, Denmark",
+    description: `Cloud-native SaaS on Cue (Cue Autopilot). Mostly frontend in Angular and TypeScript; also platform work — production Kubernetes, GitOps (ArgoCD), Kong API Gateway, and observability (Prometheus, Grafana, Loki).`,
+    iconKey: "react",
+    date: "Feb 2024 - Present",
   },
   {
-    title: "Front-end Developer Intern - RaskRask",
+    title: "Frontend Developer Intern",
+    location: "RaskRask · Aarhus, Denmark",
+    description: `Worked with TypeScript, React.js, Next.js, and Ionic across planning, prototyping, design, implementation, testing, and maintenance. Developed Storybook stories for the company's NPM package. Tested with Cypress and Jest.`,
+    iconKey: "react",
+    date: "Jul 2023 - Sep 2023",
+  },
+  {
+    title: "Career Transition · Self-directed study",
     location: "Aarhus, Denmark",
-    description: `Collaborated on all phases of development, from planning and prototyping to design, implementation, and maintenance, utilizing Typescript, React.js, Next.js, and Ionic.
-      Implemented and maintained responsive designs ensuring cross-browser compatibility.
-      Developed stories for the company's NPM package.
-      Kept abreast of emerging technologies.
-      Tested applications with Cypress and Jest.
-      Applied Object Oriented Programming (OOP) principles.
-      Utilized Atomic Design Principles in projects.
-      Demonstrated proficiency in web development with Reactjs and Nextjs.`,
-    icon: React.createElement(FaReact),
-    date: "July 2023 - September 2023",
-  },
-  {
-    title: "Software Engineer - Stibo DX",
-    location: "Aarhus, Denmark",
-    description: `Joined an international product team contributing to CUE Autopilot, an AI-driven SaaS solution improving editorial workflows and content efficiency.
-
-Implement frontend features using Angular and TypeScript while collaborating closely with customers to deliver AI-powered integrations and production-ready solutions.
-
-Contribute to architectural decisions across application and platform layers, supporting containerized workloads in Kubernetes/OpenShift environments.
-
-Work with GitOps workflows (ArgoCD) for environment promotions and deployment automation, maintain Kong API Gateway configurations (Lua handlers, CUE schemas), and enhance observability practices using Prometheus, Grafana, and Loki.
-
-Thrive in a collaborative, trust-based environment focused on ownership, continuous improvement, and shared technical growth.`,
-    icon: React.createElement(FaReact),
-    date: "February 2024 - Present",
+    description: `Transitioned into software engineering after moving to Denmark. Self-taught TypeScript, React, Next.js, and Node.js — built portfolio projects (extensions, full-stack apps) and prepared for my first developer role.`,
+    iconKey: "study",
+    date: "Nov 2022 - Jul 2023",
   },
 ] as const;
 
 export const skillsData = [
-  // Core Frontend
-  "Angular",
-  "TypeScript",
-  "JavaScript",
-  "HTML",
-  "SCSS",
-
-  // Architecture & Principles
-  "OOP",
-  "SOLID Principles",
-  "Microservices Architecture",
-
-  // Backend
-  "Node.js",
-  "NestJS",
-  "Express.js",
-  "REST APIs",
-  "JWT Authentication",
-
-  // Cloud & Platform
-  "Kubernetes",
-  "OpenShift",
-  "Docker",
-  "Podman",
-  "GitOps (ArgoCD)",
-  "CI/CD",
-  "Kong API Gateway",
-  "Lua",
-  "CUE",
-
-  // Observability
-  "Prometheus",
-  "Grafana",
-  "Loki",
-
-  // Data & APIs
-  "MongoDB",
-  "GraphQL",
-
-  // Testing
-  "Jest",
-  "Cypress",
-
-  // Dev Workflow
-  "Git",
-  "GitHub Actions",
-  "Jira",
-
-  // AI Exposure
-  "AI Integrations",
+  {
+    category: "Frontend",
+    items: ["Angular", "React", "Next.js", "TypeScript", "Microfrontends"],
+  },
+  {
+    category: "Platform & infra",
+    items: [
+      "Kubernetes",
+      "GitOps (ArgoCD)",
+      "Kong API Gateway",
+      "Docker",
+      "CI/CD",
+    ],
+  },
+  {
+    category: "Backend & observability",
+    items: [
+      "Node.js",
+      "NestJS",
+      "CUE",
+      "Prometheus",
+      "Grafana",
+      "Loki",
+    ],
+  },
+  {
+    category: "Quality",
+    items: ["Jest", "Cypress", "AI Integrations"],
+  },
 ] as const;
 
 export const projectsData = [
   {
-    title: "Nonis Components",
+    title: "Password Generator",
     description:
-      "My own NPM Package - NonisComponents, is a collection of UI components built with React and TypeScript, designed to streamline web development. By integrating TypeScript, it offers robust typing and developer-friendly features, enhancing code reliability and maintainability. This package focuses on providing a range of UI components that accelerate development workflows, making it easier for developers to create visually appealing and functional interfaces efficiently. ",
-    tags: ["typescript", "react", "stitches/react", "rollup.js"],
-    imageUrl: "/npm.jpg",
+      "Strong passwords and passphrases — offline, no data collection. Custom length, character sets, presets, strength indicator, history, and keyboard shortcuts. Live on the Chrome Web Store with behavior specs and CI.",
+    tags: ["typescript", "react", "chrome extension", "jest", "ci"],
+    imageUrls: [
+      "/projects/pwd-01-generator.png",
+      "/projects/pwd-02-passphrase.png",
+    ],
+    demoUrl:
+      "https://chromewebstore.google.com/detail/password-generator/ciplnefaommlkglhkbabmpkckccimajp",
+    sourceUrl: "https://github.com/GeorgeNonis/pwd-generator-extension",
   },
   {
-    title: "Note Manager",
+    title: "Color Picker",
     description:
-      "Introducing a full-stack TypeScript web app designed for efficient note management. Enjoy a range of features including easy reordering, pinning and unpinning notes, as well as convenient account settings. Experience the seamless usability of our mobile-friendly interface, ensuring smooth note management on the go.",
-    tags: ["typescript", "react", "redux", "scss", "nodejs", "expressjs"],
-    imageUrl: "/notemanager.png",
-  },
-  {
-    title: "Car Rental",
-    description: `This sleek web application is crafted using the robust trio of React, TypeScript, and Tailwind CSS, ensuring a fully responsive and intuitive user experience.`,
-    tags: ["typescript", "react", "tailwind", "twin-macro", "responsive"],
-    imageUrl: "/carRental.png",
-  },
-  {
-    title: "E-Shop",
-    description:
-      "I created a sleek and minimalist e-shop with user-friendly navigation. To enhance visual appeal, I used Midjourney's AI tools for captivating images. The UI/UX design is my own creation, showcasing intuitive and engaging interfaces. I pushed the boundaries of plain CSS, avoiding CSS libraries for a unique website. It's fully optimized for mobile devices, ensuring a seamless experience across screen sizes.",
-    tags: ["typescript", "react", "redux", "scss"],
-    imageUrl: "/eshop.png",
-  },
-  {
-    title: "Nonis - Movie Seeker",
-    description:
-      "This project, Unraveling Noni's World, was undertaken to enhance my frontend development skills using Next.js, a popular React framework. The goal was to gain hands-on experience with Next.js and explore its features and capabilities.",
-    tags: ["typescript", "next", "react", "redux", "react-stitches"],
-    imageUrl: "/movieseeker.png",
-  },
-  {
-    title: "Color Picker - Chrome Extension",
-    description:
-      "Color Picker - Nonis is a powerful tool designed specifically for developers and UI/UX designers. It provides an intuitive interface to generate colors, copy them, and seamlessly add them to your palette. With Color Picker - Nonis, you can effortlessly create harmonious color schemes and have them readily available for your design projects. Simplify your color workflow and elevate your design process with Color Picker - Nonis.",
-    tags: ["typescript", "react", "git", "html", "css"],
-    imageUrl: "/colorpicker.png",
-  },
-  {
-    title: "Password Generator - Chrome Extension",
-    description:
-      "Generate strong and secure passwords with Password Generator - Nonis. Customize password length and choose from options like uppercase letters, lowercase letters, numbers, and special characters. Includes a password strength indicator and history section for easy reference. Keep your accounts secure with ease!",
-    tags: ["typescript", "react", "git", "html", "css"],
-    imageUrl: "/pwdgenerator.jpg",
+      "Color picker, eyedropper, and palette for developer workflows. Built for fast copy-paste into code and design tools. Specs, tests, CI — live on the Chrome Web Store.",
+    tags: ["typescript", "react", "chrome extension", "jest", "ci"],
+    imageUrls: [
+      "/projects/color-picker-empty.png",
+      "/projects/color-picker-filled.png",
+    ],
+    demoUrl:
+      "https://chromewebstore.google.com/detail/color-picker-nonis/mpcmgnbiaijedofjkmphnalpoonggcbl",
+    sourceUrl: "https://github.com/GeorgeNonis/color-picker-extension",
   },
 ] as const;

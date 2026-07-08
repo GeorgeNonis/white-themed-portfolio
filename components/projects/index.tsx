@@ -12,7 +12,9 @@ const Projects = () => {
       <SectionHeading>My Projects</SectionHeading>
       <div>
         {projectsData.map((project, index) => {
-          return <Project key={index} {...project} />;
+          return (
+            <Project key={index} {...project} imageOnLeft={index % 2 === 1} />
+          );
         })}
       </div>
     </section>

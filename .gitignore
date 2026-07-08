@@ -33,3 +33,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# ai_skills symlinks (local only — wire via setup-cursor-skills script)
+.cursor/
+AI_GUIDELINES.md

@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import { ActiveSectionContenxtProvider } from "@/context/active-section-contenxt";
 import { Toaster } from "react-hot-toast";
 import { ThemeSwitchProvider } from "@/context/theme-switch";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,46 +13,40 @@ export const metadata = {
   description: "Giorgos Nonis a Fullstack Developer with expertise in Frontend",
 };
 
+const themeInitScript = `
+(function () {
+  try {
+    var theme = localStorage.getItem("theme");
+    if (
+      theme === "dark" ||
+      (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      document.documentElement.classList.add("dark");
+    }
+  } catch (e) {}
+})();
+`;
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="!scroll-smooth">
+    <html lang="en" className="!scroll-smooth" suppressHydrationWarning>
+      <head>
+        <Script id="theme-init" strategy="beforeInteractive">
+          {themeInitScript}
+        </Script>
+      </head>
       <body
-        className={`${inter.className}  bg-gray-50 text-gray-950 relative pt-28 sm:pt-36 dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90`}
+        className={`${inter.className} bg-gray-50 text-gray-950 relative pt-28 sm:pt-36 dark:bg-[#0b1220] dark:text-gray-50 dark:text-opacity-90`}
       >
-        <div
-          className="  bg-[#fbe2e3]
-    absolute
-    top-[-6rem]
-    -z-10
-    right-[11rem]
-    h-[31.25rem]
-    w-[31.25rem]
-    rounded-full
-    blur-[10rem]
-    sm:w-[68.75rem]
-    dark:bg-[#946263]"
-        />
-        <div
-          className="bg-[#dbd7fb]
-    absolute
-    top-[-1rem]
-    -z-10
-    left-[-35rem]
-    h-[31.25rem]
-    w-[50rem]
-    rounded-full
-    blur-[10rem]
-    sm:w-[68.75rem]
-    md:left-[-33rem]
-    lg:left-[-28rem]
-    xl:left-[-15rem]
-    2xl:left-[-5rem]
-    dark:bg-[#676394]"
-        />
+        <div className="pointer-events-none absolute inset-0 -z-20 overflow-hidden">
+          <div className="absolute top-[-8rem] right-[8rem] h-[34rem] w-[34rem] rounded-full bg-cyan-200/80 blur-[110px] sm:w-[56rem] dark:bg-cyan-900/35" />
+          <div className="absolute top-[2rem] left-[-28rem] h-[30rem] w-[44rem] rounded-full bg-sky-200/70 blur-[100px] sm:w-[58rem] md:left-[-24rem] lg:left-[-18rem] xl:left-[-10rem] dark:bg-blue-950/45" />
+          <div className="absolute bottom-[-10rem] left-1/2 h-[24rem] w-[40rem] -translate-x-1/2 rounded-full bg-teal-100/60 blur-[120px] dark:bg-teal-950/30" />
+        </div>
         <ThemeSwitchProvider>
           <ActiveSectionContenxtProvider>
             <Header />
