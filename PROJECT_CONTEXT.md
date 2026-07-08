@@ -44,9 +44,15 @@ npm run start
 | Token | Value | Use |
 |-------|-------|-----|
 | Dark page bg | `#0b1220` | `body` dark mode (`layout.tsx`) |
-| Indigo accent | `#6366f1` | Experience icons, timeline line |
+| Dark navbar bg | `#162032` | Navbar pill dark mode (`components/header/index.tsx`) |
+| Indigo accent | `#6366f1` | Experience icons, timeline line, navbar active pill |
 | Dark card bg | `#1c1c1f` | Experience timeline cards |
 | Light card bg | `#f8fafc` | Experience timeline cards |
+
+### Navbar (`components/header/index.tsx`)
+
+- **Dark mode (2026-07-09):** `#162032` surface, `white/10` border, indigo active pill (`indigo-500/20` + `indigo-400/35` ring), inactive links `gray-400` → hover `white`, active link `white`. Light mode unchanged.
+- Section highlight on scroll via `useSectionInView` in `hooks/index.ts` (default threshold `0.75`). Tall sections need lower threshold — **Experience** uses `0.2` (same as Projects); without it the timeline never reaches 75% viewport visibility and the nav link never activates.
 
 ### Theme hydration
 
@@ -80,8 +86,11 @@ node scripts/capture-portfolio-shots.mjs
 
 ## Known follow-ups
 
-- **Navbar dark mode** — background + active/hover pill too dark (`components/header/index.tsx`: `dark:bg-gray-950`, `dark:bg-gray-800` active). Fix in a separate session.
 - Color Picker `demoUrl` — swap to Chrome Web Store slug when confirmed live.
+
+## Local dev (Windows)
+
+- If `npm run dev` crashes with `EPERM` on `.next/trace`, stop other Node processes on ports 3000+, delete `.next`, then `npm run build && npm run start`. Running dev from an external terminal (not Cursor) reduces file-lock issues on Desktop/OneDrive paths.
 
 ## Local AI wiring (optional, gitignored)
 

@@ -10,9 +10,12 @@ Built with React & Next.js (App Router), TypeScript, Tailwind CSS, Framer Motion
 npm install
 npm run dev    # http://localhost:3000
 npm run build
+npm run start  # production preview (use if dev EPERM on Windows)
 ```
 
 See **`PROJECT_CONTEXT.md`** for content rules, UI/theme notes, and AI session context.
+
+**Recent (2026-07-09):** Navbar dark-mode contrast, Experience nav highlight on scroll.
 
 ## Featured projects
 
