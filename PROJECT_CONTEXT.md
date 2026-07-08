@@ -30,6 +30,8 @@ npm run build
 npm run start
 ```
 
+CI: `.github/workflows/ci.yml` — lint + build on push/PR to `master`. README preview: `docs/preview.png`.
+
 ## Content rules
 
 - **Source of truth for career copy:** `personal_context/CAREER.md` (private)
