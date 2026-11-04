@@ -25,13 +25,13 @@ const motif = (src: string) =>
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "George Nonis — Software Engineer, Aarhus" },
+      { title: "Giorgos Nonis — Software Engineer, Aarhus" },
       {
         name: "description",
         content:
-          "George Nonis — software engineer at Stibo DX on Cue Autopilot. Ships product and makes the path to production faster.",
+          "Giorgos Nonis — software engineer at Stibo DX on Cue Autopilot. Ships product and makes the path to production faster.",
       },
-      { property: "og:title", content: "George Nonis — Software Engineer" },
+      { property: "og:title", content: "Giorgos Nonis — Software Engineer" },
       {
         property: "og:description",
         content: "Engineer from Cyprus in Aarhus. Angular, platform, GitOps — and the sea.",
@@ -42,9 +42,9 @@ export const Route = createFileRoute("/")({
         property: "og:image",
         content: "https://giorgos-nonis.vercel.app/og.png",
       },
-      { property: "og:image:width", content: "652" },
-      { property: "og:image:height", content: "398" },
-      { property: "og:image:alt", content: "George Nonis" },
+      { property: "og:image:width", content: "1280" },
+      { property: "og:image:height", content: "720" },
+      { property: "og:image:alt", content: "Giorgos Nonis" },
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:image",
@@ -210,7 +210,7 @@ function Index() {
             className="rise text-glow mt-5 font-display text-[clamp(3.5rem,13vw,11rem)] font-light leading-[0.88] tracking-tight"
             style={{ animationDelay: ".15s" }}
           >
-            George
+            Giorgos
             <br />
             <span className="italic text-sand">Nonis</span>
           </h1>
@@ -251,8 +251,7 @@ function Index() {
           <Label n="01" t="Who I am" />
           <div className="space-y-5 text-lg leading-relaxed md:text-2xl md:leading-snug">
             <p>
-              I'm George — Giorgos to friends back home — from{" "}
-              <span className="text-sand">Cyprus</span>, living in{" "}
+              I'm Giorgos — from <span className="text-sand">Cyprus</span>, living in{" "}
               <span className="text-sand">Aarhus</span>. I changed careers and went all-in on
               engineering in 2023: self-taught, then an internship, then Stibo DX.
             </p>
@@ -394,7 +393,7 @@ function Index() {
             />
           </div>
           <p className="mt-20 font-mono text-xs text-muted-foreground">
-            © {new Date().getFullYear()} George Nonis · Cyprus → Aarhus
+            © {new Date().getFullYear()} Giorgos Nonis · Cyprus → Aarhus
           </p>
         </div>
       </section>

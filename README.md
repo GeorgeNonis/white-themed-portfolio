@@ -1,4 +1,4 @@
-# George Nonis — personal site
+# Giorgos Nonis — personal site
 
 Aegean → Aarhus. Replaces the previous Next.js white-theme portfolio on
 https://giorgos-nonis.vercel.app/
