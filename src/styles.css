@@ -1,0 +1,332 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sand: var(--sand);
+  --color-abyss: var(--abyss);
+  --color-life-accent: var(--life-accent);
+}
+
+:root {
+  --radius: 0.75rem;
+  --abyss: oklch(0.13 0.03 235);
+  --background: oklch(0.16 0.035 230);
+  --foreground: oklch(0.95 0.015 210);
+  --card: oklch(0.2 0.04 228);
+  --card-foreground: oklch(0.95 0.015 210);
+  --popover: oklch(0.2 0.04 228);
+  --popover-foreground: oklch(0.95 0.015 210);
+  --primary: oklch(0.78 0.12 190);
+  --primary-foreground: oklch(0.14 0.03 230);
+  --secondary: oklch(0.24 0.045 228);
+  --secondary-foreground: oklch(0.95 0.015 210);
+  --muted: oklch(0.22 0.04 228);
+  --muted-foreground: oklch(0.72 0.03 215);
+  --accent: oklch(0.82 0.1 75);
+  --accent-foreground: oklch(0.16 0.03 230);
+  --sand: oklch(0.85 0.09 78);
+  --destructive: oklch(0.65 0.2 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.95 0.015 210 / 12%);
+  --input: oklch(0.95 0.015 210 / 15%);
+  --ring: oklch(0.78 0.12 190);
+  --diving-accent: oklch(0.78 0.11 195);
+  --training-accent: oklch(0.8 0.1 30);
+  --mountains-accent: oklch(0.82 0.08 165);
+  --games-accent: oklch(0.82 0.09 85);
+  --diving-panel: oklch(0.2 0.04 215 / 88%);
+  --training-panel: oklch(0.2 0.035 225 / 88%);
+  --mountains-panel: oklch(0.2 0.04 200 / 88%);
+  --games-panel: oklch(0.19 0.035 235 / 88%);
+  --scrim-left: linear-gradient(
+    90deg,
+    var(--abyss) 0%,
+    color-mix(in oklab, var(--abyss) 80%, transparent) 45%,
+    color-mix(in oklab, var(--abyss) 35%, transparent) 100%
+  );
+  --scrim-edges: linear-gradient(
+    180deg,
+    var(--background) 0%,
+    transparent 18%,
+    transparent 82%,
+    var(--background) 100%
+  );
+}
+
+.chapter {
+  position: relative;
+  isolation: isolate;
+}
+.chapter::before {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  z-index: -1;
+  background:
+    var(--scrim-edges),
+    var(--chapter-scrim, var(--scrim-left)),
+    var(--chapter-img) var(--chapter-pos, center) / cover no-repeat,
+    var(--abyss);
+}
+.chapter-about {
+  --chapter-pos: center 70%;
+  --chapter-scrim: linear-gradient(
+    90deg,
+    var(--abyss) 0%,
+    color-mix(in oklab, var(--abyss) 75%, transparent) 50%,
+    color-mix(in oklab, var(--abyss) 45%, transparent) 100%
+  );
+}
+.chapter-about > div:first-child p {
+  color: var(--sand);
+}
+.chapter-craft {
+  --chapter-pos: center 60%;
+  border-color: color-mix(in oklab, oklch(0.75 0.12 25) 30%, transparent);
+}
+.chapter-craft > div:first-child p {
+  color: oklch(0.8 0.11 30);
+}
+.chapter-experience {
+  --chapter-img: none;
+  --chapter-scrim:
+    radial-gradient(
+      ellipse at 20% 0%,
+      color-mix(in oklab, var(--primary) 14%, transparent),
+      transparent 60%
+    ),
+    linear-gradient(180deg, var(--background), var(--abyss));
+}
+.chapter-experience > div:first-child p {
+  color: var(--sand);
+}
+.chapter-work {
+  --chapter-pos: right center;
+  --chapter-scrim: linear-gradient(
+    90deg,
+    var(--abyss) 0%,
+    color-mix(in oklab, var(--abyss) 70%, transparent) 55%,
+    transparent 100%
+  );
+}
+.chapter-work > div:first-child p {
+  color: var(--sand);
+}
+.chapter-life {
+  --chapter-pos: right 40%;
+  --chapter-scrim: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--abyss) 55%, transparent),
+    color-mix(in oklab, var(--abyss) 85%, transparent)
+  );
+}
+.life-diving {
+  --life-accent: var(--diving-accent);
+  --life-surface: var(--diving-panel);
+}
+.life-training {
+  --life-accent: var(--training-accent);
+  --life-surface: var(--training-panel);
+}
+.life-mountains {
+  --life-accent: var(--mountains-accent);
+  --life-surface: var(--mountains-panel);
+}
+.life-games {
+  --life-accent: var(--games-accent);
+  --life-surface: var(--games-panel);
+}
+.life-panel {
+  backdrop-filter: blur(6px);
+  background: var(--life-surface);
+  box-shadow: inset 0 2px 0 color-mix(in oklab, var(--life-accent) 55%, transparent);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+  a,
+  button {
+    cursor: pointer;
+  }
+  ::selection {
+    background: var(--primary);
+    color: var(--primary-foreground);
+  }
+}
+
+@utility hero-fade {
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--abyss) 30%, transparent) 0%,
+    color-mix(in oklab, var(--background) 70%, transparent) 65%,
+    var(--background) 100%
+  );
+}
+@utility text-glow {
+  text-shadow: 0 0 60px color-mix(in oklab, var(--primary) 45%, transparent);
+}
+@utility rise {
+  animation: rise 1.1s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+@utility reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+  &.in {
+    opacity: 1;
+    transform: none;
+  }
+}
+@utility drift {
+  animation: drift 24s ease-in-out infinite alternate;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: blur(0);
+  }
+}
+@keyframes drift {
+  from {
+    transform: scale(1.08) translateY(0);
+  }
+  to {
+    transform: scale(1.15) translateY(-2%);
+  }
+}
+
+@utility bubble {
+  animation: bubble 6s ease-in-out infinite;
+}
+@utility diver-float {
+  animation: diver-float 7s ease-in-out infinite alternate;
+}
+@keyframes bubble {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-24px);
+    opacity: 0.9;
+  }
+}
+@keyframes diver-float {
+  from {
+    transform: translate(-50%, 0) rotate(-4deg);
+  }
+  to {
+    transform: translate(-50%, 18px) rotate(4deg);
+  }
+}
+
+.menu-sheet {
+  background:
+    radial-gradient(
+      ellipse at 50% -10%,
+      color-mix(in oklab, var(--primary) 22%, transparent),
+      transparent 60%
+    ),
+    color-mix(in oklab, var(--abyss) 88%, transparent);
+  backdrop-filter: blur(18px) saturate(130%);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease,
+    visibility 0s linear 0.3s;
+}
+.menu-sheet.is-open {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease;
+}
+.menu-link {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.4s ease,
+    transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.menu-sheet.is-open .menu-link {
+  opacity: 1;
+  transform: none;
+}
+.depth-btn {
+  transition: background-color 0.2s ease;
+}
+.depth-btn:active {
+  background: color-mix(in oklab, var(--primary) 15%, transparent);
+}
+@media (max-width: 767px) {
+  .chapter::before {
+    background:
+      var(--scrim-edges),
+      linear-gradient(
+        color-mix(in oklab, var(--abyss) 72%, transparent),
+        color-mix(in oklab, var(--abyss) 72%, transparent)
+      ),
+      var(--chapter-img) var(--chapter-pos, center) / cover no-repeat,
+      var(--abyss);
+  }
+  .chapter-experience::before {
+    background: var(--chapter-scrim);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .menu-sheet,
+  .menu-link {
+    transition: none;
+  }
+}
