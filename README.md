@@ -1,30 +1,22 @@
-# Personal Portfolio
+# George Nonis — personal site
 
-[![CI](https://github.com/GeorgeNonis/white-themed-portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/GeorgeNonis/white-themed-portfolio/actions/workflows/ci.yml)
-[![Live on Vercel](https://img.shields.io/badge/live-giorgos--nonis.vercel.app-000?logo=vercel)](https://giorgos-nonis.vercel.app)
+Aegean → Aarhus. Replaces the previous Next.js white-theme portfolio on
+https://giorgos-nonis.vercel.app/
 
-Personal site for Giorgos Nonis — projects, experience, skills, contact.
-
-**Live:** [giorgos-nonis.vercel.app](https://giorgos-nonis.vercel.app)
-
-![Portfolio preview — hero and navigation](./docs/preview.png)
-
-Built with React & Next.js (App Router), TypeScript, Tailwind CSS, Framer Motion, React Email & Resend.
+Stack: TanStack Start, Vite, Nitro (Vercel preset), Tailwind.
 
 ## Dev
 
 ```bash
-npm install
-npm run dev    # http://localhost:3000
-npm run build
-npm run start  # production preview (use if dev EPERM on Windows)
+bun install
+bun run dev -- --host 0.0.0.0 --port 8765
 ```
 
-See **`PROJECT_CONTEXT.md`** for content rules, UI/theme notes, and AI session context.
+## Build
 
-## Featured projects
+```bash
+bun run build   # must emit Nitro preset "vercel"
+bun run test
+```
 
-- [Password Generator](https://chromewebstore.google.com/detail/password-generator/ciplnefaommlkglhkbabmpkckccimajp) — Chrome extension
-- [Color Picker](https://chromewebstore.google.com/detail/color-picker-nonis/mpcmgnbiaijedofjkmphnalpoonggcbl) — Chrome extension
-
-Screenshots live in `public/projects/`.
+Previous Next.js site archived on branch `archive/next-white-theme`.

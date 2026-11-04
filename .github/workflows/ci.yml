@@ -2,26 +2,21 @@ name: CI
 
 on:
   push:
-    branches: [master, main]
+    branches: [master, feat/**]
   pull_request:
-    branches: [master, main]
+    branches: [master]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v4
+      - uses: oven-sh/setup-bun@v2
         with:
-          node-version: "20"
-          cache: npm
-
-      - name: Install
-        run: npm ci
-
-      - name: Lint
-        run: npm run lint
-
-      - name: Build
-        run: npm run build
+          bun-version: latest
+      - run: bun install --frozen-lockfile
+      - run: bun run lint
+      - run: bun run build
+      - name: Assert Vercel Nitro preset
+        run: |
+          node -e "const j=require('./.vercel/output/nitro.json'); if(j.preset!=='vercel'){console.error(j); process.exit(1)} console.log('preset ok', j.preset)"
