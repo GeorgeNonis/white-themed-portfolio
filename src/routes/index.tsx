@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import {
   ArrowUpRight,
+  Download,
   Github,
   Linkedin,
   Mail,
@@ -13,6 +14,9 @@ import {
   Gamepad2,
   X,
 } from "lucide-react";
+
+const CV_HREF = "/Giorgos-Nonis-CV.pdf";
+const CV_FILENAME = "Giorgos-Nonis-CV.pdf";
 import water from "@/assets/deep-water.jpg";
 import sand from "@/assets/sea-sand.jpg";
 import coral from "@/assets/sea-coral.jpg";
@@ -232,6 +236,13 @@ function Index() {
               View work
             </a>
             <a
+              href={CV_HREF}
+              download={CV_FILENAME}
+              className="rounded-full border border-foreground/30 px-6 py-3 font-medium transition-colors hover:border-foreground"
+            >
+              Download CV
+            </a>
+            <a
               href="#contact"
               className="rounded-full border border-foreground/30 px-6 py-3 font-medium transition-colors hover:border-foreground"
             >
@@ -372,7 +383,7 @@ function Index() {
           <p className="mt-6 max-w-lg text-lg text-muted-foreground">
             Feel free to get in touch — collaboration, an interesting problem, or just to say hi.
           </p>
-          <div className="mt-12 grid gap-4 sm:grid-cols-3">
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             <Contact
               icon={Mail}
               label="Email"
@@ -390,6 +401,13 @@ function Index() {
               label="GitHub"
               value="GeorgeNonis"
               href="https://github.com/GeorgeNonis"
+            />
+            <Contact
+              icon={Download}
+              label="CV"
+              value="Download PDF"
+              href={CV_HREF}
+              download={CV_FILENAME}
             />
           </div>
           <p className="mt-20 font-mono text-xs text-muted-foreground">
@@ -435,17 +453,20 @@ function Contact({
   label,
   value,
   href,
+  download,
 }: {
   icon: typeof Mail;
   label: string;
   value: string;
   href: string;
+  download?: string;
 }) {
   return (
     <a
       href={href}
+      download={download}
       target={href.startsWith("http") ? "_blank" : undefined}
-      rel="noreferrer"
+      rel={href.startsWith("http") ? "noreferrer" : undefined}
       className="group flex items-center gap-4 rounded-xl border border-border bg-card/40 p-5 transition-colors hover:border-primary"
     >
       <I className="h-5 w-5 text-primary" />
