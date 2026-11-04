@@ -82,7 +82,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Personal site of George Nonis, software engineer." },
       { name: "author", content: "George Nonis" },
       { property: "og:type", content: "website" },
+      {
+        property: "og:image",
+        content: "https://giorgos-nonis.vercel.app/og.png",
+      },
       { name: "twitter:card", content: "summary_large_image" },
+      {
+        name: "twitter:image",
+        content: "https://giorgos-nonis.vercel.app/og.png",
+      },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
